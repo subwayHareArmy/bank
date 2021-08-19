@@ -1,3 +1,4 @@
+-- File to prepopulate the database. Cannot get it to work as of now.
 
 CREATE TABLE billionaires (
   id INT AUTO_INCREMENT PRIMARY KEY,
@@ -17,9 +18,8 @@ CREATE TABLE billionaires (
 
 --INSERT INTO accounts ( id, name, address, ifsc, balance) VALUES
 --  (1, 'a', 'Mumbai', 'ICICI', 300.0),
---  (2, 'snkdas', 'fasdf', 'ICICI', 45000.0),
+--  (2, 'asgfawegaw', 'shteherherh', 'ICICI', 45000.0),
 --  (3, 'Ayush', 'Pune', 'ICICI', 36500.0);
---  (4, 'sdafasf', 'Pugaergaergne', 'ICsfdICI', 36500.0);
 
 
 INSERT INTO billionaires (first_name, last_name, career) VALUES

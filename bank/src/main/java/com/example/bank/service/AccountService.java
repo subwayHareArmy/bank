@@ -16,18 +16,17 @@ public class AccountService {
     @Autowired
     private AccountRepository accountRepository;
 
+    // Searches AccountEntity object if it exists, by account number
     public AccountEntity getAccountByAccountNumber(String accountNumber){
         return accountRepository.findByAccountNumber(accountNumber);
     }
 
+    // Saves an account to database. If it already exists, it is overwritten
     public AccountEntity save(AccountEntity newAccount){
-        AccountEntity temp = getAccountByAccountNumber(newAccount.getAccountNumber());
-        if (temp == null){
-            return accountRepository.save(newAccount);
-        }
-        return null;
+        return accountRepository.save(newAccount);
     }
 
+    // Returns the balance of an account if it exists
     public Double getBalanceByAccountNumber(String accountNumber){
         AccountEntity temp = accountRepository.findByAccountNumber(accountNumber);
         if (temp == null) {
