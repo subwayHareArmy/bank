@@ -1,3 +1,4 @@
+-- File to prepopulate the database. Cannot get it to work as of now.
 
 CREATE TABLE billionaires (
   id INT AUTO_INCREMENT PRIMARY KEY,

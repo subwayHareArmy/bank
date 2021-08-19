@@ -5,10 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import javax.validation.constraints.DecimalMin;
-import javax.validation.constraints.Digits;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 
 // Check if noArgs Constructor is even needed
 @Data
@@ -27,7 +24,9 @@ public class AccountEntity {
     @Size(message = "Account number has to be exactly 10 digits.", min = 10, max = 10)
     private String accountNumber;
 
+    // Account name can only have alphabets, no numeric or special characters
     @NotNull(message = "Account name cannot be null.")
+    @Pattern(regexp = "^[a-zA-Z]*$", message = "Account name can include only letters.")
     private String name;
 
     private String address;
