@@ -19,9 +19,10 @@ public class AccountEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    // Account Numbers are only 10 digits
+    // Account Numbers are only 10 digits, numerical strings
     @NotNull(message = "Account number cannot be null.")
     @Size(message = "Account number has to be exactly 10 digits.", min = 10, max = 10)
+    @Pattern(regexp = "[0-9]+", message = "Account number can include only numbers.")
     private String accountNumber;
 
     // Account name can only have alphabets, no numeric or special characters
